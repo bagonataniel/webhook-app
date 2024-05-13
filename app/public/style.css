@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.setNameContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(40deg, #000000ff, #111111ff, #232323ff, #343434ff, #464646ff, #575757ff, #696969ff, #7a7a7aff);
+    z-index: 10;
+}
+#setName{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    transition: border 0.5s;
+    font-size: 30px;
+    color: white;
+}
+#setName:focus{
+    border-bottom: 5px solid white;
+}
+
+#submitName{
+    font-size: 30px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    background: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+#submitName:hover{
+    background-color: white;
+    color: black;
+}
+
+.chat-container{
+    margin: auto;
+    display: grid;
+    width: 50%;
+    grid-template-rows: 90% 10%;
+    height: 750px;
+}
+.chat-messages{
+    width: 100%;
+    border: 1px solid black;
+}
+.texting-area{
+    width: 100%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+#messageInput{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 30px;
+}
+
+#messages{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    margin: 10px;
+}
+#username-txt{
+    color: red;
+}
