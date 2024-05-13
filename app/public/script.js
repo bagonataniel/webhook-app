@@ -1,42 +1,50 @@
 
-const ws = new WebSocket('ws://192.168.1.6:3000');
+const ws = new WebSocket('ws://localhost:3000');
 var username;
 
 ws.onmessage = (event) => {
-    console.log(blobToString(event))
+    StoreReadedText(JSON.parse(event.data))
 };
 
 function sendMessage() {
     const inputElement = document.getElementById('messageInput');
-    const message = username + "|" + inputElement.value;
-    ws.send(message);
+    // const message = username + "|" + inputElement.value;
+    const message = {
+        type : "message",
+        user : username,
+        content : inputElement.value
+    };
+    ws.send(JSON.stringify(message));
     inputElement.value = '';
 }
 
-function blobToString(blob) {
-    return blob.text;
-}
-
-function readData(DataToRead){
-    const blob = DataToRead.data;
-    const reader = new FileReader();
-    let message;
-
-    reader.readAsText(blob)
-    reader.onload = () => {
-        message = reader.result;
-        StoreReadedText(message);
-    };
-}
-
 function StoreReadedText(text){
-    const messagesElement = document.getElementById('messages');
-    const li = document.createElement('li');
-    li.innerHTML = "<span id='username-txt'>"+ text.split('|')[0] +": </span>" + text.split('|')[1] ;
-    messagesElement.appendChild(li);
+    switch (text.type) {
+        case "message":
+            const messagesElement = document.getElementById('messages');
+            const li = document.createElement('li');
+            li.innerHTML = "<span id='username-txt'>"+ text.user +": </span>" + text.content ;
+            messagesElement.appendChild(li);
+            break;
+        case "log":
+            console.log(text.content);
+        default:
+            break;
+    }
 }
 
 function setUsername(){
     username = document.getElementById("setName").value;
     document.querySelector(".setNameContainer").style.display = "none";
 }
+
+var textInput = document.getElementById("messageInput");
+textInput.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("sendBtn").click();
+    }
+  });
