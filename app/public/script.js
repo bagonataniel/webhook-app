@@ -1,8 +1,9 @@
+
 const ws = new WebSocket('ws://192.168.1.6:3000');
 var username;
 
 ws.onmessage = (event) => {
-    readData(event)
+    console.log(blobToString(event))
 };
 
 function sendMessage() {
@@ -10,6 +11,10 @@ function sendMessage() {
     const message = username + "|" + inputElement.value;
     ws.send(message);
     inputElement.value = '';
+}
+
+function blobToString(blob) {
+    return blob.text;
 }
 
 function readData(DataToRead){
@@ -30,6 +35,7 @@ function StoreReadedText(text){
     li.innerHTML = "<span id='username-txt'>"+ text.split('|')[0] +": </span>" + text.split('|')[1] ;
     messagesElement.appendChild(li);
 }
+
 function setUsername(){
     username = document.getElementById("setName").value;
     document.querySelector(".setNameContainer").style.display = "none";
