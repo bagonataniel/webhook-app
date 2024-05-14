@@ -1,6 +1,6 @@
 
 // const ws = new WebSocket('ws://localhost:3000');
-const ws = new WebSocket('ws://my-nodejs-app-32u7.onrender.com');
+const ws = new WebSocket('wss://my-nodejs-app-32u7.onrender.com');
 
 var username;
 
