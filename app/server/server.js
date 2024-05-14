@@ -30,8 +30,8 @@ wss.on('connection', (ws) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
-const ip = 'localhost'; // Replace with your computer's IP address
+const PORT = process.env.PORT || 8080;
+const ip = 'https://my-nodejs-app-32u7.onrender.com'; // Replace with your computer's IP address
 server.listen(PORT, ip, () => {
     console.log(`Server running at http://${ip}:${PORT}/`);
 });
