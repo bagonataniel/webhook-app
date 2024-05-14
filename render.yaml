@@ -1,0 +1,9 @@
+services:
+  - name: my-nodejs-app
+    github:
+      repo: bagonataniel/webhook-app
+      branch: main
+    env: node
+    buildCommand: cd app/server && npm install
+    startCommand: cd app/server && node server.js
+    publicDir: /app/server
