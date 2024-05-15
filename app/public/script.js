@@ -56,14 +56,14 @@ function enterOnInput(){
 
 function ShowChat(){
     (async () => {
-        const text = await (await fetch("../public/chat.html")).text();
+        const text = await (await fetch("/chat.html")).text();
         document.querySelector(".right-container").innerHTML = text;
     })();
 }
 
 function ShowSettings(){
     (async () => {
-        const text = await (await fetch("../public/settings.html")).text();
+        const text = await (await fetch("/settings.html")).text();
         document.querySelector(".right-container").innerHTML = text;
     })();
 }
