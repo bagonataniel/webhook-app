@@ -53,6 +53,7 @@
 .chat-messages{
     width: 100%;
     border: 1px solid black;
+    overflow-y: auto;
 }
 .texting-area{
     width: 100%;
@@ -69,7 +70,7 @@
 
 #messages{
     list-style-type: none;
-    width: 100%;
+    width: auto;
     height: 100%;
     font-size: 30px;
     margin: 10px;
