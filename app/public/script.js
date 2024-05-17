@@ -101,6 +101,3 @@ function ShowSettings(){
         document.querySelector(".right-container").innerHTML = text;
     })();
 }
-
-
-ShowChat();
