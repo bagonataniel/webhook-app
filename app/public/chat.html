@@ -1,22 +1,30 @@
 <div class="groups">
-    <div class="group"><div class="loader"></div></div>
-    <div class="group"><div class="loader"></div></div>
-    <div class="group"><div class="loader"></div></div>
-    <div class="group"><div class="loader"></div></div>
+    <div class="groupMenu">
+        <span onclick="showPopup()" id="createPostBtn"><i class="fa-solid fa-plus fa-2x"></i></span>
+    </div>
 </div>
 <div class="chat-container">
     <div class="info-container">
         <span style="color: white; font-size: 25px;">
             <i class="fa-solid fa-user-group"></i>
         </span>
-        <p>Csoportnév</p>
+        <p id="info-groupName">Csoport</p>
     </div>
     <div class="chat-messages">
         <ul id="messages"></ul>
     </div>
     <div class="texting-area">
-        <input type="text" id="messageInput" placeholder="Type a message" onclick="enterOnInput()">
+        <input type="text" id="messageInput" placeholder="Type a message" onclick="sendmsgOnEnter()">
         <span onclick="sendMessage()" id="send_btn"><i class="fa-solid fa-arrow-up fa-xl"></i></span>
     </div>
 </div>
+<div id="myPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hidePopup()">&times;</span>
+      <h1>Create a new group</h1>
+      <input type="text" name="groupName" id="groupName">
+      <input type="password" name="groupPwd" id="groupPwd">
+      <span onclick="createGroup()">Create Group</span>
+    </div>
+  </div>
 <link rel="stylesheet" href="style-chat.css">
