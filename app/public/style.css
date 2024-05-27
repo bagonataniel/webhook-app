@@ -102,6 +102,7 @@ nav{
 .notification.hidden {
     opacity: 0;
     bottom: 20px;
+    visibility: hidden;
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) { 
