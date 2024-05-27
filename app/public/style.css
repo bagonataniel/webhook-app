@@ -66,3 +66,114 @@ nav{
 .right-container{
     background-color: #1d1f2b;
 }
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    color: white;
+}
+.center h1, p{
+    text-align: center;
+}
+.center input{
+    margin: 10px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    bottom: 30px;
+}
+.notification.hidden {
+    opacity: 0;
+    bottom: 20px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+    .main-container{
+        grid-template-columns: 100%;
+        grid-template-rows: 90% 10%;
+    }
+    nav{
+        order: 2;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu{
+        margin: 0;
+        flex-direction: row;
+    }
+    .chat-container .chat-messages{
+        height: 90% !important;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .main-container{
+        grid-template-columns: 100%;
+        grid-template-rows: 90% 10%;
+    }
+    nav{
+        order: 2;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu{
+        margin: 0;
+        flex-direction: row;
+    }
+    .right-container{
+        grid-template-columns: 15% 85% !important;
+    }
+    .chat-container .chat-messages{
+        height: 90% !important;
+    }
+    .chat-container{
+        padding: 10px !important;
+        margin-bottom: 10px;
+    }
+}
+
+@media all and (max-width: 480px) { 
+    .main-container{
+        grid-template-columns: 100%;
+        grid-template-rows: 90% 10%;
+    }
+    nav{
+        order: 2;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu{
+        margin: 0;
+        flex-direction: row;
+    }
+    .right-container{
+        grid-template-columns: 15% 85% !important;
+    }
+    .chat-container .chat-messages{
+        height: 90% !important;
+    }
+    .chat-container{
+        padding: 10px !important;
+        margin-bottom: 10px;
+    }
+}

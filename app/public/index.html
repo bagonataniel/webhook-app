@@ -17,13 +17,18 @@
             </div>
         </nav>
         <div class="right-container">
-            <h1>Chat app</h1>
-            <p>Select the message icon to start chatting</p>
-            <input type="text" name="setName" id="setName" placeholder="felhasználónév">
-    <input type="submit" id="submitName" value="OK" onclick="setUsername()">
+            <div class="center">
+                <h1>Chat app</h1>
+                <p>Click on the message icon to start chatting</p>
+                <input type="text" name="setName" id="setName" placeholder="felhasználónév">
+        <input type="submit" id="submitName" value="OK" onclick="setUsername()">
+            </div>
         </div>
     </div>
     
+    <div id="notification" class="notification hidden">
+        Changes saved succesfully!
+    </div>
     
     <script src="script.js"></script>
 </body>

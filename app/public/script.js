@@ -46,7 +46,7 @@ function StoreReadedText(text){
             groupContainer.className = "group";
             groupContainer.setAttribute("id", text.name);
             document.querySelector(".groups").appendChild(groupContainer);
-            document.getElementById(text.name).innerHTML += text.name;
+            document.getElementById(text.name).innerHTML += "<p id='group-name'>"+ text.name +"</p>";
             document.getElementById(text.name).onclick = function()
             {   currentGroup = this.id; 
                 document.getElementById("info-groupName").innerText = this.id;
@@ -57,7 +57,16 @@ function StoreReadedText(text){
             }
         }
         
-function setUsername(){username = document.getElementById("setName").value;}
+function setUsername(){
+    username = document.getElementById("setName").value;
+    notification.classList.remove('hidden');
+    notification.classList.add('show');
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+        notification.classList.add('hidden');
+    }, 3000);
+}
 function showPopup() {document.getElementById("myPopup").style.display = "block";}
 function hidePopup() {document.getElementById("myPopup").style.display = "none";}
 
