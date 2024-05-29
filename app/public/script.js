@@ -39,7 +39,7 @@ function StoreReadedText(text){
             }
             break;
         case "log":
-            console.log(text);
+            console.log(text.content);
             break;
         case "CreateGroup":
             var groupContainer = document.createElement("div");
