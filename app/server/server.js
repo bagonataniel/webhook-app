@@ -18,7 +18,7 @@ wss.on('connection', (ws) => {
 
     ws.on('message', (message) => {
         const receivedData = JSON.parse(message);
-        console.log('Received: ' + receivedData);
+        console.log('Received: ' + receivedData.type + ' ' + receivedData.content);
         
         switch (receivedData.type) {
             case "message":
