@@ -16,7 +16,7 @@ var lookup = {};
 wss.on('connection', (ws) => {
     ws.id = id++;
     lookup[ws.id] = ws;
-    lookup[1].send(JSON.stringify({ type: "log", content: "hello"}));
+    // lookup[1].send(JSON.stringify({ type: "log", content: "hello"}));
     console.log(lookup)
     console.log('A client connected');
     console.log(groups);
