@@ -10,13 +10,19 @@ const wss = new WebSocket.Server({ server });
 app.use(express.static(path.join(__dirname, '../public')));
 
 var groups = [];
+var id = 0;
+var lookup = {};
 
 wss.on('connection', (ws) => {
+    ws.id = id++;
+    lookup[ws.id] = ws;
+    lookup[lookup.length].send(JSON.stringify({ type: "log", content: "hello"}));
+
     console.log('A client connected');
     console.log(groups);
-    groups.forEach(element => {
-        Broadcast(element);
-    });
+    // groups.forEach(element => {
+    //     Broadcast(element);
+    // });
 
     ws.on('message', (message) => {
         const receivedData = JSON.parse(message);
