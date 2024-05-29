@@ -14,7 +14,9 @@ var groups = [];
 wss.on('connection', (ws) => {
     console.log('A client connected');
     console.log(groups);
-    Broadcast(JSON.stringify({ type : "log", content : "test"}));
+    groups.forEach(element => {
+        Broadcast(element);
+    });
 
     ws.on('message', (message) => {
         const receivedData = JSON.parse(message);
