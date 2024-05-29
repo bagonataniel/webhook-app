@@ -17,12 +17,12 @@ wss.on('connection', (ws) => {
     ws.id = id++;
     lookup[ws.id] = ws;
     // lookup[1].send(JSON.stringify({ type: "log", content: "hello"}));
-    Broadcast(lookup)
+    // Broadcast(lookup)
     console.log('A client connected');
     console.log(groups);
-    // groups.forEach(element => {
-    //     Broadcast(element);
-    // });
+    groups.forEach(element => {
+        ws.send(element)
+    });
 
     ws.on('message', (message) => {
         const receivedData = JSON.parse(message);
