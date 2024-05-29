@@ -1,6 +1,7 @@
 const ws = new WebSocket('wss://my-nodejs-app-32u7.onrender.com');
 var username;
 var currentGroup;
+ShowChat();
 
 ws.onmessage = (event) => {
     StoreReadedText(JSON.parse(event.data))
@@ -22,7 +23,7 @@ function sendMessage() {
         inputElement.value = '';
     }
     else{
-        console.error("No groups selected")
+        alert("No groups selected")
     }
 }
 

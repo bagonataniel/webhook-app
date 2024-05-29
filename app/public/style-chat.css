@@ -17,6 +17,7 @@
     background:#303344;
     display: grid;
     align-items: center;
+    cursor: pointer;
   }
 .group p{
     color: white;
