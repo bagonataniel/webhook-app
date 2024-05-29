@@ -18,13 +18,13 @@ wss.on('connection', (ws) => {
 
     ws.on('message', (message) => {
         const receivedData = JSON.parse(message);
-        console.log('Received: ' + receivedData.type + ' ' + receivedData.content);
+        console.log('Received: ' + receivedData.type);
         
         switch (receivedData.type) {
             case "message":
                 Broadcast(JSON.stringify(receivedData));
                 break;
-            case "createGroup":
+            case "CreateGroup":
                 groups.push(JSON.stringify(receivedData));
                 Broadcast(JSON.stringify(receivedData));
             default:
