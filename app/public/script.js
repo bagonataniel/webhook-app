@@ -27,6 +27,7 @@ function sendMessage() {
 }
 
 function StoreReadedText(text){
+    console.log(text)
     switch (text.type) {
         case "message":
             if (currentGroup == text.groupName) {
