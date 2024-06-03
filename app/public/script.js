@@ -54,6 +54,19 @@ function StoreReadedText(text){
                 document.getElementById("info-groupName").innerText = this.id;
                 document.getElementById("messages").innerHTML = "";
             }
+            break;
+        case "oldCreateGroup":
+            var groupContainer = document.createElement("div");
+            groupContainer.className = "group";
+            groupContainer.setAttribute("id", text.name);
+            document.querySelector(".groups").appendChild(groupContainer);
+            document.getElementById(text.name).innerHTML += "<p id='group-name'>"+ text.name +"</p>";
+            document.getElementById(text.name).onclick = function()
+            {   currentGroup = this.id; 
+                document.getElementById("info-groupName").innerText = this.id;
+                document.getElementById("messages").innerHTML = "";
+            }
+            break;
             default:
                 break;
             }
