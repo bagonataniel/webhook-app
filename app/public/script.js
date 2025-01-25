@@ -10,7 +10,11 @@ function sleep(ms) {
 async function init() {
 try {
     await sleep(1000);
-    ws.send("type : {test}")
+    const message = {
+        type : "test",
+        value : "test"
+    };
+    ws.send(JSON.stringify(message));
     document.querySelector(".loading").style.display = "none";
 } catch (error) {
     document.querySelector(".loading").style.display = "abosulte";
