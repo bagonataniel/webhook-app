@@ -13,7 +13,7 @@ try {
     ws.send("hello")
     document.querySelector(".loading").style.display = "none";
 } catch (error) {
-    document.querySelector(".loading").style.display = "flex";
+    document.querySelector(".loading").style.display = "abosulte";
     console.log(error);
     await sleep(1000);
     init();
