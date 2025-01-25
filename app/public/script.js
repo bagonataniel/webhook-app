@@ -10,7 +10,7 @@ function sleep(ms) {
 async function init() {
 try {
     await sleep(1000);
-    ws.send("hello")
+    ws.send("type : {test}")
     document.querySelector(".loading").style.display = "none";
 } catch (error) {
     document.querySelector(".loading").style.display = "abosulte";
