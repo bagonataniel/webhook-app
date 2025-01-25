@@ -6,13 +6,20 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
+.loading{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1d1f2b;
+}
 .main-container{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 5% 95%;
 }
 .setNameContainer{
     display: flex;
@@ -51,7 +58,6 @@
 
 nav{
     background-color: #6785ff;
-
 }
 .menu{
     margin-top: 50px;

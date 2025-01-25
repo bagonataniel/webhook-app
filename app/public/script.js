@@ -3,6 +3,24 @@ var username;
 var currentGroup;
 ShowChat();
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function init() {
+try {
+    await sleep(1000);
+    ws.send("hello")
+    document.querySelector(".loading").style.display = "none";
+} catch (error) {
+    document.querySelector(".loading").style.display = "flex";
+    console.log(error);
+    await sleep(1000);
+    init();
+}
+}
+
+init();
 ws.onmessage = (event) => {
     StoreReadedText(JSON.parse(event.data))
 };

@@ -40,7 +40,8 @@ wss.on('connection', (ws) => {
 });
 
 const PORT = process.env.PORT || 10000;
-const ip = '0.0.0.0'; // Replace with your computer's IP address
+// const ip = '0.0.0.0'; // Replace with your computer's IP address
+const ip = '127.0.0.1'; // Replace with your computer's IP address
 server.listen(PORT, ip, () => {
     console.log(`Server running at http://${ip}:${PORT}/`);
 });
